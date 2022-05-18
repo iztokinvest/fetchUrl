@@ -8,7 +8,6 @@ function fetchUrl(option) {
 	const addAttributeToId = option.addAttributeToId; //Add attributes to ids with object {attribute:id}
 	const addAttributeToClass = option.addAttributeToId; //Add attributes to classes with object {class:id}
 	const removeAttributeFromId = option.removeAttributeFromId; //Remove attribuges from ids with object {attribute:id}
-	const msgSuccess = option.msgSuccess; //Message for success
 	const msgConfirm = option.msgConfirm; //Confirmation with this text
 	const emptyData = option.emptyData; //If true - Clear form values after form submit
 	const reloadPage = option.reloadPage; //If true - Reload page after form submit
@@ -44,8 +43,19 @@ function fetchUrl(option) {
 						alert(data.warning);
 						location.reload();
 					} else {
-						if (msgSuccess) {
-							showAlert("success", msgSuccess);
+						if (data.msg) {
+							if (typeof showAlert === "function") {
+								showAlert("success", data.msg);
+							} else {
+								alert(data.msg);
+							}
+						}
+						if (data.error) {
+							if (typeof showAlert === "function") {
+								showAlert("error", data.error);
+							} else {
+								alert(data.error);
+							}
 						}
 						console.log("Success:", data);
 					}
@@ -67,7 +77,7 @@ function fetchUrl(option) {
 				})
 				.catch((error) => {
 					console.error("Error:", error);
-					alert("Грешка, промените не са запазени");
+					alert("Error, something was wrong");
 				});
 		}
 	} else {

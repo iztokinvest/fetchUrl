@@ -44,3 +44,8 @@ Redirect to url after submit
 ```php
 echo json_encode(['redirect' => 'https://example.com']);
 ```
+call JS function after submit
+```php
+echo json_encode(['function' => ['test', [1, 2]]]);
+//exmample ['test', [1, 2]] - test = function name, 1,2 = options. If function not have options, then the example is ['test', []]
+```

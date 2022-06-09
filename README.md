@@ -18,13 +18,16 @@
 <span id="hidden-content"></span>
 ```
 # After SUBMIT commands
-```HTML
+
 Return function showAlert(alertType, Message) if exists. if not exists return alert(Message)
+```php
 echo json_encode(['msg' => 'Message text']);
-
+```
 Return function showAlert(alertType, Message) if exists. if not exists return alert(Message)
+```php
 echo json_encode(['error' => 'Error text']);
-
+```
 Redirect to url after submit
+```php
 echo json_encode(['redirect' => 'https://example.com']);
 ```

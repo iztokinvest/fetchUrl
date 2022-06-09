@@ -57,6 +57,9 @@ function fetchUrl(option) {
 								alert(data.error);
 							}
 						}
+						if (data.redirect) {
+							window.location.href = data.redirect;
+						}
 						console.log("Success:", data);
 					}
 

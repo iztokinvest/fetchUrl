@@ -32,13 +32,9 @@
 ```
 # After SUBMIT commands
 
-Return function showAlert(alertType, Message) if exists. if not exists return alert(Message)
+Return allert
 ```php
-echo json_encode(['msg' => 'Message text']);
-```
-Return function showAlert(alertType, Message) if exists. if not exists return alert(Message)
-```php
-echo json_encode(['error' => 'Error text']);
+echo json_encode(['alert' => 'Message text']);
 ```
 Redirect to url after submit
 ```php

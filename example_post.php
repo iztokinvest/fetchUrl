@@ -2,4 +2,4 @@
 
 $post = json_decode(file_get_contents("php://input"));
 
-echo json_encode(['msg' => 'Message text']);
+echo json_encode(['alert' => 'Message text']);

@@ -43,19 +43,8 @@ function fetchUrl(option) {
 						alert(data.warning);
 						location.reload();
 					} else {
-						if (data.msg) {
-							if (typeof showAlert === "function") {
-								showAlert("success", data.msg);
-							} else {
-								alert(data.msg);
-							}
-						}
-						if (data.error) {
-							if (typeof showAlert === "function") {
-								showAlert("error", data.error);
-							} else {
-								alert(data.error);
-							}
+						if (data.alert) {
+							alert(data.alert);
 						}
 						if (data.function) {
 							window[data.function[0]](data.function[1]);

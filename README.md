@@ -46,3 +46,8 @@ echo json_encode(['function' => ['test', [1, 2]]]);
 //exmample ['test', [1, 2]] - test = function name, 1,2 = options. If function not have options, then the example is ['test', []]
 //JS function example: function test(opt) { console.log(opt[0]); console.log(opt[1]); }
 ```
+Display result with innerHTML after submit
+```php
+echo json_encode(['display' => $result]);
+//in fetchUrl() fetchDisplayId is required
+```

@@ -53,6 +53,12 @@ function fetchUrl(option) {
 							window.location.href = data.redirect;
 						}
 						console.log("Success:", data);
+
+						if (fetchDisplayId && data.display) {
+							const elementToDisplay =
+								document.getElementById(fetchDisplayId);
+							elementToDisplay.innerHTML = data.display;
+						}
 					}
 
 					if (emptyData == true) {

@@ -32,9 +32,17 @@
 ```
 # After SUBMIT commands
 
+Catch POST request
+```php
+$post = json_decode(file_get_contents('php://input'));
+```
 Return allert
 ```php
 echo json_encode(['alert' => 'Message text']);
+```
+Return confirm
+```php
+echo json_encode(['confirm' => 'Confirm text']);
 ```
 Redirect to url after submit
 ```php

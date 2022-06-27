@@ -46,6 +46,11 @@ function fetchUrl(option) {
 						if (data.alert) {
 							alert(data.alert);
 						}
+						if (data.confirm) {
+							if (confirm(data.confirm) != true) {
+								return;
+							}
+						}
 						if (data.function) {
 							window[data.function[0]](data.function[1]);
 						}

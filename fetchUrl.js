@@ -41,7 +41,7 @@ function fetchUrl(option) {
 				.then((data) => {
 					if (data.hasOwnProperty("warning")) {
 						alert(data.warning);
-						location.reload();
+						return;
 					} else {
 						if (data.alert) {
 							alert(data.alert);

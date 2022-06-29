@@ -47,6 +47,7 @@ echo json_encode(['confirm' => 'Confirm text']);
 Redirect to url after submit
 ```php
 echo json_encode(['redirect' => 'https://example.com']);
+//if you want redirect only, use 'current' instead url address
 ```
 call JS function after submit
 ```php

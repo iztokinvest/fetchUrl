@@ -55,7 +55,11 @@ function fetchUrl(option) {
 							window[data.function[0]](data.function[1]);
 						}
 						if (data.redirect) {
-							window.location.href = data.redirect;
+							if (data.redirect != "current") {
+								window.location.href = data.redirect;
+							} else {
+								location.reload();
+							}
 						}
 						console.log("Success:", data);
 

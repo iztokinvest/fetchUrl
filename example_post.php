@@ -2,4 +2,10 @@
 
 $post = json_decode(file_get_contents("php://input"));
 
-echo json_encode(['alert' => 'Message text', 'display' => $post->testInput]);
+if ($post->testInput == 'test') {
+	$result = ['display' => $post->testInput];
+} else {
+	$result = ['confirm' => 'Message is not "test". Are you sure?', 'display' => $post->testInput];
+}
+
+echo json_encode($result);

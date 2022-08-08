@@ -30,7 +30,7 @@
 })"></span>
 <span id="hidden-content"></span>
 ```
-# After SUBMIT commands
+# After POST commands
 
 Catch POST request
 ```php
@@ -59,4 +59,19 @@ Display result with innerHTML after submit
 ```php
 echo json_encode(['display' => $result]);
 //in fetchUrl() fetchDisplayId is required
+```
+# After NOT POST commands
+
+call JS function after submit
+```php
+echo json_encode(['return' => 'Return Text', 'function' => ['test', [1, 2]]]);
+//exmample ['test', [1, 2]] - test = function name, 1,2 = options. If function not have options, then the example is ['test', []]
+//JS function example: function test(opt) { console.log(opt[0]); console.log(opt[1]); }
+//Return text is required in this case
+```
+Output text only
+```php
+echo json_encode(['result' => $result]);
+//or simple
+echo json_decode($result);
 ```

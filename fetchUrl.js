@@ -97,7 +97,14 @@ function fetchUrl(option) {
 			.then((success) => fetchData(success));
 
 		function fetchData(success) {
-			elementToDisplay.innerHTML = success;
+			if (success.hasOwnProperty("return")) {
+				elementToDisplay.innerHTML = success.return;
+				if (success.function) {
+					window[success.function[0]](success.function[1]);
+				}
+			} else {
+				elementToDisplay.innerHTML = success;
+			}
 		}
 	}
 

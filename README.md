@@ -24,7 +24,7 @@
 ```
 # Simple HTML LOAD RESOURCE example
 ```HTML
-<span onClick="onClick="fetchUrl({
+<span onClick="fetchUrl({
 	  fetchUrl: 'example_json.php',
 	  fetchDisplayId: 'hidden-content'
 })"></span>
